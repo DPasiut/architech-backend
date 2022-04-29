@@ -9,9 +9,9 @@ import java.util.regex.Pattern;
 
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-class LoginValidator {
+public class LoginValidator {
 
-    boolean isValid(String login){
+    public boolean isValid(String login){
         if(login != null){
             String regex = "[0-9a-zA-Z]{6,}";
             Pattern pattern = Pattern.compile(regex);

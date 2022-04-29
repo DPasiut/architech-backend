@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Configuration;
 class UserConfiguration {
 
     @Bean
-    public UserFacade userFacade (UserRepository userRepository){
-        return new UserFacade(userRepository);
+    public UserService userFacade (UserRepository userRepository){
+        return new UserService(userRepository);
     }
 
 }

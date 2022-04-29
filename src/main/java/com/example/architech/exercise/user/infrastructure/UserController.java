@@ -1,36 +1,30 @@
 package com.example.architech.exercise.user.infrastructure;
 
-import com.example.architech.exercise.user.domain.UserFacade;
+import com.example.architech.exercise.user.domain.UserService;
 import com.example.architech.exercise.user.dto.UserDto;
-import com.example.architech.exercise.user.exception.CriteriaException;
-import com.example.architech.exercise.user.exception.UserAlreadyExistException;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "user")
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class UserController {
 
-    org.apache.logging.log4j.Logger logger = org.apache.logging.log4j.LogManager.getLogger(this);
+    UserService userService;
 
-    UserFacade userFacade;
-
-    public UserController(UserFacade userFacade) {
-        this.userFacade = userFacade;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     @PostMapping("/register")
-    public ResponseEntity<UserDto> addUser(@RequestBody UserDto userDto){
-        try {
-            return new ResponseEntity<>(userFacade.addUser(userDto), HttpStatus.OK);
-        }catch (UserAlreadyExistException e){
-            logger.error(e.getLocalizedMessage());
-        }
-        return ResponseEntity.internalServerError().build();
+    public ResponseEntity<UserDto> addUser(@RequestBody UserDto userDto) {
+        userService.addUser(userDto);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

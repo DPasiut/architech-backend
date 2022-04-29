@@ -19,7 +19,7 @@ class User {
     @Id
     @Setter(value = AccessLevel.PACKAGE)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long user_id;
+    Long userId;
 
     @Column(name = "login")
     String login;

@@ -9,10 +9,10 @@ import java.util.regex.Pattern;
 
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-class PasswordValidator {
+public class PasswordValidator {
 
-    public boolean isValid(String password){
-        if(password != null){
+    public boolean isValid(String password) {
+        if (password != null) {
             String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(password);
