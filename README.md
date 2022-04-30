@@ -9,4 +9,3 @@
 ![image](https://user-images.githubusercontent.com/48771917/166106742-f1d2f245-bf6c-4345-86f8-0144a920aa60.png) </br>
 
 ### 3 - Clon repository and run application</br>
-### 4 - Done. Server is ready and working on locally. 
