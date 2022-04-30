@@ -1,5 +1,7 @@
 # Run instruction </br>
 
+## Run postgres database in docker - rquired Docker
+
 ### 1. Install docker on your PC 
 
 [install docker](https://www.docker.com/get-started/)
@@ -14,4 +16,13 @@
 
 ![image](https://user-images.githubusercontent.com/48771917/166106742-f1d2f245-bf6c-4345-86f8-0144a920aa60.png) 
 
-### 3. Clon repository and run application
+## Run server - required java 11 and Maven 
+[java 11 install instruction](https://java.tutorials24x7.com/blog/how-to-install-java-11-on-windows)
+
+### 3. Clon repository 
+
+### 4. In project root directory run command 
+```mvn clean install```
+
+```mvn spring-boot:run```
+
