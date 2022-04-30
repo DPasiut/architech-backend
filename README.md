@@ -6,7 +6,7 @@
 
 [install docker](https://www.docker.com/get-started/)
 
-### 2. Open terminal and enter below command 
+### 2. Open terminal and enter command 
 
 ```docker run --name architechDb -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres``` 
 
