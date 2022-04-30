@@ -6,7 +6,7 @@
 
 ### 2. Open terminal and enter below command 
 
-```command docker run --name architechDb -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres``` 
+```docker run --name architechDb -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres``` 
 
 ![image](https://user-images.githubusercontent.com/48771917/166106717-a922a937-2bb9-4357-a5e7-aaa00a26ce75.png) 
 
