@@ -13,7 +13,7 @@ public class LoginValidator {
 
     public boolean isValid(String login){
         if(login != null){
-            String regex = "[0-9a-zA-Z]{6,}";
+            String regex = "[0-9a-zA-Z]{5,}";
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(login);
             return matcher.matches();
