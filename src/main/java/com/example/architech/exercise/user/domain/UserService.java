@@ -44,14 +44,14 @@ public class UserService {
 
     private void checkPassword(UserDto userDto) {
         if (!passwordValidator.isValid(userDto.getPassword())) {
-            logger.error("Password [ " + userDto.getPassword() + " ] is invalid");
+            logger.error("Password is invalid");
             throw new InvalidPasswordException("Password is invalid");
         }
     }
 
     private void checkLogin(UserDto userDto) {
         if (!loginValidator.isValid(userDto.getLogin())) {
-            logger.error("Login [ " + userDto.getLogin() + " ] is invalid");
+            logger.error("Login is invalid");
             throw new InvalidLoginException("Login is invalid");
         }
     }
