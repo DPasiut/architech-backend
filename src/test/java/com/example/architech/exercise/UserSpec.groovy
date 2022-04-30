@@ -16,11 +16,13 @@ class UserSpec extends Specification {
 
     def "should thrown error when login is invalid"() {
         given: "There is a user with invalid login"
-            userDto = new UserDto("wrongLogin!", "CorrectPassword123")
+            userDto = new UserDto("invalidLogin!@# ", "CorrectPassword123")
         when: "User try register invalid data"
             service.addUser(userDto)
         then: "InvalidLoginException is thrown"
             thrown(InvalidLoginException)
+        and: "user has not been added"
+            !repository.findOneByLogin(userDto.getLogin()).isPresent()
     }
 
     def "should thrown error when password is invalid"() {
@@ -30,6 +32,8 @@ class UserSpec extends Specification {
             service.addUser(userDto)
         then: "InvalidPasswordException is thrown"
             thrown(InvalidPasswordException)
+        and: "user has not been added"
+            !repository.findOneByLogin(userDto.getLogin()).isPresent()
     }
 
     def "should thrown error when user already exist"() {

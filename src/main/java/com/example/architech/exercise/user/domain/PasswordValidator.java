@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class PasswordValidator {
+class PasswordValidator {
 
     public boolean isValid(String password) {
         if (password != null) {
