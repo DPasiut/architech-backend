@@ -13,8 +13,7 @@ If port 5432 is already in use, just kill that proccess or change proxy in step 
 
 ## Run server - required Java 11 and Maven 
 
-### IMPORTANT 
-
+#### IMPORTANT 
 Server in default is running on port ```8080``` if port is already in use, kill that proccess or add ```server.port=free_port``` properties  in ```application.properties```  -> ```architech.exercise\src\main\resources```. But then you have also change properties in frontend application ```ArchitechFrontend```. In file ```proxy.config.json``` change to ```"target":``` to ``` "http://localhost:free_port",```
 
 ### 1. Clon repository 
