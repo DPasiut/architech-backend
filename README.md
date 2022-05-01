@@ -3,25 +3,15 @@
 ## Run postgres database in docker - rquired Docker
 
 #### IMPORTANT 
-If port 5432 is already in use, just kill that proccess or change proxy in step 2, e.g.  ```-p free_port:5432``` but remember to change properties in ```application.properties```  -> ```architech.exercise\src\main\resources```
+If port 5432 is already in use, just kill that proccess or change proxy in step 1, e.g.  ```-p free_port:5432``` but remember to change properties in ```application.properties```  -> ```architech.exercise\src\main\resources```
  ```spring.datasource.url=jdbc:postgresql://localhost:free_port/postgres```
 
-### 1. Install docker on your PC 
 
-[install docker](https://www.docker.com/get-started/)
+### 1. Open terminal and enter command 
 
-### 2. Open terminal and enter command 
+```docker run --name architechDb -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres```
 
-```docker run --name architechDb -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres``` 
-
-![image](https://user-images.githubusercontent.com/48771917/166106717-a922a937-2bb9-4357-a5e7-aaa00a26ce75.png) 
-
-
-#### enter command ```docker-ps``` for check if your postgres container is running 
-
-![image](https://user-images.githubusercontent.com/48771917/166106742-f1d2f245-bf6c-4345-86f8-0144a920aa60.png) 
-
-## Run server - required java 11 and Maven 
+## Run server - required Java 11 and Maven 
 
 ### IMPORTANT 
 
